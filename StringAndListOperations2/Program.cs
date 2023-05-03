@@ -89,13 +89,46 @@ ICounters counters = new Counters();
 //int lastIndex = firstString.LastIndexOf(character);
 //Console.WriteLine(lastIndex);
 
-
+Console.ForegroundColor = ConsoleColor.Cyan;
 string emailTemplate = readFromTxtFile.ReadFromFile();
-int wordCount = counters.WordCount(emailTemplate);
-
-
 Console.WriteLine(emailTemplate);
-Console.WriteLine("****************");
-Console.WriteLine("Word count: " +  wordCount);
+Console.ResetColor();
 
+Console.WriteLine("**********************************************\n");
 
+int wordCount = counters.WordCount(emailTemplate);
+int letterCount = counters.LetterCount(emailTemplate);
+int lineCount = counters.LineCount(emailTemplate);
+int fullstopCount = counters.FullstopCount(emailTemplate);
+int spaceCount = counters.SpacesCount(emailTemplate);
+int questionMarkCount = counters.QuestionMarkCount(emailTemplate);
+
+Console.ForegroundColor = ConsoleColor.Magenta;
+Console.WriteLine("Word counter: " + wordCount);
+Console.WriteLine("**********************************************");
+Console.ResetColor();
+
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("Letter counter: " + letterCount);
+Console.WriteLine("**********************************************");
+Console.ResetColor();
+
+Console.ForegroundColor = ConsoleColor.Red;
+Console.WriteLine("Line counter: " + lineCount);
+Console.WriteLine("**********************************************");
+Console.ResetColor();
+
+Console.ForegroundColor = ConsoleColor.Blue;
+Console.WriteLine("Fullstop counter: " + fullstopCount);
+Console.WriteLine("**********************************************");
+Console.ResetColor();
+
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("Space counter: " + spaceCount);
+Console.WriteLine("**********************************************");
+Console.ResetColor();
+
+Console.ForegroundColor = ConsoleColor.DarkMagenta;
+Console.WriteLine("Question mark counter: " + questionMarkCount);
+Console.WriteLine("**********************************************");
+Console.ResetColor();

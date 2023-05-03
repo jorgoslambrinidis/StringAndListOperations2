@@ -9,25 +9,80 @@ namespace StringAndListOperations2
 {
     public class Counters : ICounters
     {
-        // Word Count
         public int WordCount(string text)
         {
-            int count = 0;
-
             string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            count = words.Length;
+            int count = words.Length;
 
             return count;
         }
 
-        public void LetterCount() { }
+        public int LetterCount(string text)
+        {
+            int totalLetterCount = 0;
 
-        public void LineCount() { }
+            string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-        public void SpacesCount() { }
+            foreach (string word in words)
+            {
+                int letterCount = word.Length;
+                totalLetterCount += letterCount;  //totalLetterCount = totalLetterCount + letterCount;
+            }
 
-        public void FullStopCount() { }
+            return totalLetterCount;
+        }
+        public int SpacesCount(string text)
+        {
+            int spaceCount = 0;
 
-       
+            foreach (char c in text)
+            {
+                if (c == ' ')
+                {
+                    spaceCount++;
+                }
+            }
+
+            return spaceCount;
+        }
+
+        public int FullstopCount(string text)
+        {
+            int fullstopCount = 0;
+
+            foreach (char c in text)
+            {
+                if (c == '.')
+                {
+                    fullstopCount++;
+                }
+            }
+
+            return fullstopCount;
+        }
+
+        public int QuestionMarkCount(string text)
+        {
+            int questionMarkCount = 0;
+
+            foreach (char c in text)
+            {
+                if (c == '?')
+                {
+                    questionMarkCount++;
+                }
+            }
+
+            return questionMarkCount;
+        }
+
+        public int LineCount(string text)
+        {
+            string[] lines = text.Split(new [] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+            int lineCount = lines.Length;
+
+            return lineCount;
+        }
+
     }
 }

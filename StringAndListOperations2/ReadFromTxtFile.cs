@@ -45,8 +45,10 @@ namespace StringAndListOperations2
             }
             catch (IOException ex)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("File cannot be read");
                 Console.WriteLine(ex.Message);
+                Console.ResetColor();
             }
 
             return text;
