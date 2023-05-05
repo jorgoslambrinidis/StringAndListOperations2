@@ -15,7 +15,6 @@ namespace StringAndListOperations2
             string fileName = "emailTemplate.txt";
 
             string currentDirectory = Directory.GetCurrentDirectory();
-
             string projectBinDirectory = Directory.GetParent(currentDirectory).Parent.FullName;
             string projectDirectoryName = Directory.GetParent(projectBinDirectory).Parent.Name; // "StringAndListOperations2"
             string projectDirectory = Directory.GetParent(projectBinDirectory).Parent.FullName;

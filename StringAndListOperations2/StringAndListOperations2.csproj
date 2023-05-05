@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="EmailTemplates\a\b\" />
+    <Folder Include="EmailTemplates\NewFiles\" />
   </ItemGroup>
 
 </Project>
